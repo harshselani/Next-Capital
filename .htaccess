@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteRule ^file1.html$ file2.html
+#test_redirect
+RewriteRule    ^api/users?$    index.php?id=create-user    [NC,L]    # 
+RewriteRule    ^api/login?$    index.php?id=verify-login    [NC,L]    # 
+RewriteRule    ^api/leagues?$    index.php?id=league    [NC,L]    # create and list
+RewriteRule    ^api/leagues/([0-9]+)?$    index.php?id=get-league&leagueID=$1    [NC,L]    #
+RewriteRule    ^api/bowlers?$    index.php?id=bowler    [NC,L]    # create and list
+RewriteRule    ^api/bowlers/([0-9]+)?$    index.php?id=get-bowler&bowlerID=$1    [NC,L]    #
+RewriteRule    ^api/leagues/([0-9]+)/bowlers?$    index.php?id=league-bowler&leagueID=$1    [NC,L]    #
+RewriteRule    ^api/leagues/([0-9]+)/lotteries?$    index.php?id=league-lotteries&leagueID=$1    [NC,L]    #
+RewriteRule    ^api/leagues/([0-9]+)/lotteries/([0-9]+)?$    index.php?id=get-league-lottery&leagueID=$1&lotteryID=$2    [NC,L]    #
+RewriteRule    ^api/leagues/([0-9]+)/lotteries/([0-9]+)/tickets?$    index.php?id=lottery-ticket&leagueID=$1&lotteryID=$2    [NC,L]    #
+RewriteRule    ^api/leagues/([0-9]+)/lotteries/([0-9]+)/roll?$    index.php?id=lottery-draw&leagueID=$1&lotteryID=$2    [NC,L]    #
